@@ -1,9 +1,9 @@
 ---
+unclassified:
+  location:
+    url: http://localhost/jenkins
 jenkins:
   systemMessage: "Jenkins for NodeJS App."
-  views:
-    - myView:
-        name: "NodeJS"
 security:
   globalJobDslSecurityConfiguration:
     useScriptSecurity: false

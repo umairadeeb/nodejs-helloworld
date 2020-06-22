@@ -25,6 +25,10 @@ spec:
               value: "admin"
             - name: JAVA_OPTS
               value: "-Djenkins.install.runSetupWizard=false"
+            - name: JENKINS_OPTS
+              value: "--prefix=/jenkins"
+            - name: CASC_JENKINS_CONFIG
+              value: "/usr/share/jenkins/ref/"
 ---
 apiVersion: v1
 kind: Service
@@ -43,8 +47,6 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: jenkins
-  annotations:
-    ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
     - http:
