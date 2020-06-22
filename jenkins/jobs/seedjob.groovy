@@ -26,4 +26,3 @@ multibranchPipelineJob("ci-build-job") {
         }
     }
 }
-}
