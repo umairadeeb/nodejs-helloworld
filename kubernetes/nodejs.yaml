@@ -17,6 +17,7 @@ spec:
       containers:
         - image: nodejs_helloworld
           name: nodejs
+          imagePullPolicy: Never
           env:
             - name: MYSQL_HOST
               value: "mysql"
