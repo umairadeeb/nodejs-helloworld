@@ -18,11 +18,11 @@ const db = mysql.createConnection ({
 // configure middleware
 app.set('port', process.env.port || port); // set express to use this port
 
+// Connect to database
+db.connect();
 
-// app.get('/', (req, res) => res.send('Hello World!'))
-
+// Fetch records and show page on every request to /
 app.get('/', function (req, res) {
-  db.connect();
 
   db.query('SELECT message FROM content', function(err, rows, fields)
   {
@@ -30,13 +30,7 @@ app.get('/', function (req, res) {
 
       res.send(rows[0].message);
   });
-
-  db.end();
-
 });
 
 
-
-
-
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+app.listen(port, () => console.log(`Application listening at http://localhost:${port}`))

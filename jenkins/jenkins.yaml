@@ -1,0 +1,21 @@
+---
+jenkins:
+  systemMessage: "Jenkins for NodeJS App."
+  views:
+    - myView:
+        name: "NodeJS"
+security:
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: false
+jobs:
+  - script: >
+      freeStyleJob("Seed Job") {
+        scm {
+          github('umairadeeb/nodejs-helloworld', 'master')
+        }
+        steps {
+          dsl {
+            external('*.groovy')
+          }
+        }
+      }

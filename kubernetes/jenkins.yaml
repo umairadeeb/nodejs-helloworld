@@ -19,14 +19,12 @@ spec:
           name: jenkins
           imagePullPolicy: Never
           env:
-            - name: MYSQL_HOST
-              value: "mysql"
-            - name: MYSQL_DB
-              value: "nodejs_helloworld"
-            - name: MYSQL_USER
-              value: "nodejs"
-            - name: MYSQL_PASS
-              value: "nodejs_helloworld"
+            - name: ADMIN_USERNAME
+              value: "admin"
+            - name: ADMIN_PASSWORD
+              value: "admin"
+            - name: JAVA_OPTS
+              value: "-Djenkins.install.runSetupWizard=false"
 ---
 apiVersion: v1
 kind: Service
@@ -40,4 +38,19 @@ spec:
     - port: 8080
   selector:
     app: jenkins
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jenkins
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /jenkins
+            backend:
+              serviceName: jenkins
+              servicePort: 8080
 

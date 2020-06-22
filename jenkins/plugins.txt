@@ -1,0 +1,8 @@
+git
+job-dsl
+github-branch-source
+blueocean
+workflow-aggregator
+configuration-as-code
+configuration-as-code-support
+credentials
