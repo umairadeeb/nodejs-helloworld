@@ -26,13 +26,13 @@ app.get('/', function (req, res) {
 
   db.query('SELECT message FROM content', function(err, rows, fields)
   {
-      db.end();
-
       if (err) throw err;
 
       res.send(rows[0].message);
-
   });
+
+  db.end();
+
 });
 
 

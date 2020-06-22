@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodejs
+  name: jenkins
   labels:
-    app: nodejs
+    app: jenkins
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nodejs
+      app: jenkins
   template:
     metadata:
       labels:
-        app: nodejs
+        app: jenkins
     spec:
       containers:
-        - image: nodejs_helloworld
-          name: nodejs
+        - image: jenkins_nodejs
+          name: jenkins
           imagePullPolicy: Never
           env:
             - name: MYSQL_HOST
@@ -31,27 +31,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nodejs
+  name: jenkins
   labels:
-    app: nodejs
+    app: jenkins
 spec:
   type: ClusterIP
   ports:
-    - port: 3000
+    - port: 8080
   selector:
-    app: nodejs
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: nodejs
-  annotations:
-    ingress.kubernetes.io/rewrite-target: /
-spec:
-  rules:
-    - http:
-        paths:
-          - path: /
-            backend:
-              serviceName: nodejs
-              servicePort: 3000
+    app: jenkins
+
