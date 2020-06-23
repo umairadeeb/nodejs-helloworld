@@ -2,6 +2,25 @@
 unclassified:
   location:
     url: http://localhost/jenkins
+  globalLibraries:
+    libraries:
+      - name: "shared-library"
+        defaultVersion: "master"
+        implicit: true
+        retriever:
+          modernSCM:
+            scm:
+              github:
+                id: "8704a675-abdf-4574-bda3-ff9bec3c7730"
+                repoOwner: "umairadeeb"
+                repository: "jenkins-shared-library"
+                traits:
+                  - branchDiscoveryTrait:
+                      strategyId: 1
+                  - originPullRequestDiscoveryTrait:
+                      strategyId: 1
+                  - forkPullRequestDiscoveryTrait:
+                      strategyId: 1
 jenkins:
   systemMessage: "Jenkins for NodeJS App."
 security:
