@@ -7,13 +7,6 @@ const mysql_db = process.env.MYSQL_DB;
 const mysql_user = process.env.MYSQL_USER;
 const mysql_pass = process.env.MYSQL_PASS;
 
-app.configure('development', () => {
-  var current_env = DEV;
-})
-
-app.configure('production', () => {
-  var current_env = PROD;
-})
 
 // create connection to database
 const db = mysql.createConnection ({
@@ -36,8 +29,8 @@ app.get('/', function (req, res) {
   {
       if (err) throw err;
 
-      res.send(rows[0].message);
-      res.send('Environment: ' + current_env)
+      res.send(rows[0].message + "<br><br>environment: " + process.env.NODE_ENV);
+
   });
 });
 
