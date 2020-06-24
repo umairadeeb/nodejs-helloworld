@@ -12,6 +12,10 @@ After installing Docker for Mac, you have to enable Kubernetes in docker. Follow
 We need an Ingress controller to access the application on our system that is deployed on Kubernetes.
 Ingress controller can be installed from here: https://kubernetes.github.io/ingress-nginx/deploy/
 
+#### Helm Client
+Install the latest package of helm client from this path: https://helm.sh/docs/intro/install/
+If you have brew installed, you can install helm with command: `brew install helm`
+
 ### 2. Jenkins Startup
 There is a script named `bootstrap.sh` on the root of this repository. Execute this script to start Jenkins on your system.
 
