@@ -2,21 +2,11 @@
 pipelineJob("build") {
     displayName 'Build'
 
-    orphanedItemStrategy {
-        discardOldItems {
-            numToKeep(10)
-        }
-    }
-
-    branchSources {
-        github {
-           // scanCredentialsId('github-ci-user-credentials')
-            repoOwner('umairadeeb')
-            repository('nodejs-helloworld')
-            buildOriginBranch(true)
-            buildOriginPRMerge(false)
-            buildOriginBranchWithPR(false)
-            id("nodejs-helloworld-branch-id")
+    scm {
+        git {
+            remote {
+                github('umairadeeb/nodejs-helloworld', 'https')
+            }
         }
     }
 
@@ -32,21 +22,11 @@ pipelineJob("build") {
 pipelineJob("deploy") {
     displayName 'Deploy'
 
-    orphanedItemStrategy {
-        discardOldItems {
-            numToKeep(10)
-        }
-    }
-
-    branchSources {
-        github {
-            // scanCredentialsId('github-ci-user-credentials')
-            repoOwner('umairadeeb')
-            repository('nodejs-helloworld')
-            buildOriginBranch(false)
-            buildOriginPRMerge(true)
-            buildOriginBranchWithPR(false)
-            id("nodejs-helloworld-branch-id")
+    scm {
+        git {
+            remote {
+                github('umairadeeb/nodejs-helloworld', 'https')
+            }
         }
     }
 
