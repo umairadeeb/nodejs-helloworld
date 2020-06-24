@@ -14,7 +14,8 @@ Ingress controller can be installed from here: https://kubernetes.github.io/ingr
 
 ### 2. Jenkins Startup
 There is a script named `bootstrap.sh` on the root of this repository. Execute this script to start Jenkins on your system.
-bash <(curl -Ls https://raw.githubusercontent.com/umairadeeb/nodejs-helloworld/master/bootstrap.sh)
+
+```bash <(curl -Ls https://raw.githubusercontent.com/umairadeeb/nodejs-helloworld/master/bootstrap.sh)```
 
 Once the Jenkins server is started, your can access it at:
 Jenkins URL: http://localhost/jenkins
