@@ -3,6 +3,7 @@
 # Clone repository
 echo "Cloning repository.."
 git clone https://github.com/umairadeeb/nodejs-helloworld.git &> bootstrap.log
+cd nodejs-helloworld
 
 # Build Jenkins Docker image
 echo "Building docker image for Jenkins.."
