@@ -6,3 +6,4 @@ workflow-aggregator
 configuration-as-code
 credentials
 pipeline-utility-steps
+startup-trigger-plugin

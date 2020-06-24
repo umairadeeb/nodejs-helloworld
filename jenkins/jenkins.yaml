@@ -42,6 +42,14 @@ security:
 jobs:
   - script: >
       freeStyleJob("Seed Job") {
+        triggers {
+            hudsonStartupTrigger {
+              quietPeriod("60")
+              runOnChoice("ON_CONNECT")
+              label("")
+              nodeParameterName("")
+            }
+        }
         scm {
           github('umairadeeb/nodejs-helloworld', 'master')
         }
