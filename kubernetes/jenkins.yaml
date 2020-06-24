@@ -43,6 +43,19 @@ spec:
   selector:
     app: jenkins
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-agent
+spec:
+  type: NodePort
+  selector:
+    app: jenkins
+  ports:
+    - port: 30005
+      targetPort: 30005
+      nodePort: 30005
+---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:

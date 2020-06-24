@@ -1,6 +1,6 @@
 // CI Job for NodeJS App
-multibranchPipelineJob("ci-build-job") {
-    displayName 'CI Build'
+multibranchPipelineJob("build") {
+    displayName 'Build'
 
     orphanedItemStrategy {
         discardOldItems {
@@ -15,6 +15,36 @@ multibranchPipelineJob("ci-build-job") {
             repository('nodejs-helloworld')
             buildOriginBranch(true)
             buildOriginPRMerge(false)
+            buildOriginBranchWithPR(false)
+            id("nodejs-helloworld-branch-id")
+        }
+    }
+
+    factory {
+        workflowBranchProjectFactory {
+            scriptPath('Jenkinsfile')
+        }
+    }
+}
+
+
+// Deployment Job for NodeJS App
+multibranchPipelineJob("deploy") {
+    displayName 'Deploy'
+
+    orphanedItemStrategy {
+        discardOldItems {
+            numToKeep(10)
+        }
+    }
+
+    branchSources {
+        github {
+            // scanCredentialsId('github-ci-user-credentials')
+            repoOwner('umairadeeb')
+            repository('nodejs-helloworld')
+            buildOriginBranch(false)
+            buildOriginPRMerge(true)
             buildOriginBranchWithPR(false)
             id("nodejs-helloworld-branch-id")
         }

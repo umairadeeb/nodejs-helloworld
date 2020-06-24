@@ -15,13 +15,26 @@ unclassified:
                 repoOwner: "umairadeeb"
                 repository: "jenkins-shared-library"
                 traits:
-                  - branchDiscoveryTrait:
+                  - gitHubBranchDiscovery:
                       strategyId: 1
-                  - originPullRequestDiscoveryTrait:
+                  - gitHubPullRequestDiscovery:
                       strategyId: 1
-                  - forkPullRequestDiscoveryTrait:
+                  - gitHubForkDiscovery:
                       strategyId: 1
 jenkins:
+  slaveAgentPort: 30005
+  nodes:
+    - permanent:
+        name: "parent"
+        labelString: "parent"
+        remoteFS: "~/jenkins"
+        launcher:
+          jnlp:
+            workDirSettings:
+              disabled: true
+              failIfWorkDirIsMissing: false
+              internalDir: "remoting"
+              workDirPath: "/tmp"
   systemMessage: "Jenkins for NodeJS App."
 security:
   globalJobDslSecurityConfiguration:
