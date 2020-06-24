@@ -59,9 +59,10 @@ http://localhost
 - Jenkins Job DSL plugin
 - Jenkins Startup trigger plugin
 - Both DEV and PROD environments are deployed on different namespaces to keep them in a separate sandbox
+- Subchart for MariaDB
 
 ### Improvements
 - Support for Blue/Green deployments
 - More modular code for Jenkins Shared Library
 - Implement github webhooks to fully automate Pull Request Builds, Deploy on merge, and environment promotion using pull requests to upstream branches or release tags.
-- HELM versioning and updating existing deployment instead of uninstall and then install.
+- Semantic versioning based on github commit sha1 and build number.
