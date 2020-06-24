@@ -27,7 +27,7 @@ jenkins:
     - permanent:
         name: "parent"
         labelString: "parent"
-        remoteFS: "~/jenkins"
+        remoteFS: "jenkins"
         launcher:
           jnlp:
             workDirSettings:
