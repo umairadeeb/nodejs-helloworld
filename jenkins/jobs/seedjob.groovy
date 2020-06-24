@@ -1,11 +1,14 @@
 // CI Job for NodeJS App
 pipelineJob("build") {
     displayName 'Build'
-
-    scm {
-        git {
-            remote {
-                github('umairadeeb/nodejs-helloworld', 'https')
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        github('umairadeeb/nodejs-helloworld', 'https')
+                    }
+                }
             }
         }
     }
@@ -22,10 +25,14 @@ pipelineJob("build") {
 pipelineJob("deploy") {
     displayName 'Deploy'
 
-    scm {
-        git {
-            remote {
-                github('umairadeeb/nodejs-helloworld', 'https')
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        github('umairadeeb/nodejs-helloworld', 'https')
+                    }
+                }
             }
         }
     }
