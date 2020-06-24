@@ -12,12 +12,6 @@ pipelineJob("build") {
             }
         }
     }
-
-    factory {
-        workflowBranchProjectFactory {
-            scriptPath('Jenkinsfile')
-        }
-    }
 }
 
 
@@ -34,12 +28,6 @@ pipelineJob("deploy") {
                     }
                 }
             }
-        }
-    }
-
-    factory {
-        workflowBranchProjectFactory {
-            scriptPath('Jenkinsfile')
         }
     }
 }
