@@ -1,5 +1,5 @@
 // CI Job for NodeJS App
-multibranchPipelineJob("build") {
+pipelineJob("build") {
     displayName 'Build'
 
     orphanedItemStrategy {
@@ -29,7 +29,7 @@ multibranchPipelineJob("build") {
 
 
 // Deployment Job for NodeJS App
-multibranchPipelineJob("deploy") {
+pipelineJob("deploy") {
     displayName 'Deploy'
 
     orphanedItemStrategy {
