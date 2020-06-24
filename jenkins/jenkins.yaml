@@ -4,7 +4,7 @@ unclassified:
     url: http://localhost/jenkins
   globalLibraries:
     libraries:
-      - name: "shared-library"
+      - name: "shared_library"
         defaultVersion: "master"
         implicit: true
         retriever:
