@@ -64,3 +64,4 @@ http://localhost
 - Support for Blue/Green deployments
 - More modular code for Jenkins Shared Library
 - Implement github webhooks to fully automate Pull Request Builds, Deploy on merge, and environment promotion using pull requests to upstream branches or release tags.
+- HELM versioning and updating existing deployment instead of uninstall and then install.
