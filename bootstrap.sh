@@ -2,16 +2,16 @@
 
 # Clone repository
 echo "Cloning repository.."
-git clone https://github.com/umairadeeb/nodejs-helloworld.git &> bootstrap.log
+git clone https://github.com/umairadeeb/nodejs-helloworld.git &>> bootstrap.log
 cd nodejs-helloworld
 
 # Build Jenkins Docker image
 echo "Building docker image for Jenkins.."
-docker build -t jenkins_nodejs jenkins/ &> bootstrap.log
+docker build -t jenkins_nodejs jenkins/ &>> bootstrap.log
 
 # Start Jenkins server
 echo "Starting Jenkins server.."
-kubectl apply -f kubernetes/jenkins.yaml &> bootstrap.log
+kubectl apply -f kubernetes/jenkins.yaml &>> bootstrap.log
 
 # Access Jenkins
 echo "Jenkins is accessible at: http://localhost/jenkins"
