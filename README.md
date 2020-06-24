@@ -25,6 +25,9 @@ Once the Jenkins server is started, your can access it at:
 
 **Password**: admin
 
+### Install JRE to run Jenkins agent.
+To run Jenkins agent on your system, you need JRE. Install JRE from here: https://www.oracle.com/java/technologies/javase-jre8-downloads.html
+
 ### 3. Start Jenkins Agent
 After logging into Jenkins, go to below url and run the `agent.jar` on your system to connect your host to Jenkins server.
 
