@@ -5,4 +5,4 @@ pipeline:
     build:
       status: enabled
       cmd_name: 'docker'
-      cmd_args: 'built -t nodejs_helloworld'
+      cmd_args: 'build -t nodejs_helloworld'
