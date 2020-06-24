@@ -18,9 +18,12 @@ There is a script named `bootstrap.sh` on the root of this repository. Execute t
 ```bash <(curl -Ls https://raw.githubusercontent.com/umairadeeb/nodejs-helloworld/master/bootstrap.sh)```
 
 Once the Jenkins server is started, your can access it at:
-Jenkins URL: http://localhost/jenkins
-Username: admin
-Password: admin
+
+**Jenkins URL**: http://localhost/jenkins
+
+**Username**: admin
+
+**Password**: admin
 
 ### 3. Start Jenkins Agent
 After logging into Jenkins, go to below url and run the `agent.jar` on your system to connect your host to Jenkins server.
@@ -28,7 +31,9 @@ After logging into Jenkins, go to below url and run the `agent.jar` on your syst
 - Jenkins Agent URL: http://localhost/jenkins/computer/parent/
 - Download agent.jar: http://localhost/jenkins/jnlpJars/agent.jar
 
-Copy command written as `java -jar agent.jar ...` and execute it on your system's terminal.
+Change current working directory to where the agent.jar downloaded (usually ~/Downloads/).
+
+Now copy command written as `java -jar agent.jar ...` on Jenkins Agent page and execute it on your system's terminal where you changed current working directory.
 
 ### 4. Build NodeJS Application
 On Jenkins server UI, there is a job named as `Build` that will create a Docker image for NodeJS application.
